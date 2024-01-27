@@ -1,0 +1,36 @@
+<div mat-dialog-title class="dialog-title">
+    <h2>
+        {{isUpdate ? 'Edit the text': 'Details'}}
+    </h2>
+    <button class="" mat-icon-button aria-label="close dialog" mat-dialog-close (click)="close()">
+        <mat-icon>close</mat-icon>
+    </button>
+</div>
+
+<mat-divider></mat-divider>
+
+<ng-container [ngTemplateOutlet]="isUpdate ? updateT : detailsT"></ng-container>
+<ng-template #updateT>
+</ng-template>
+<ng-template #detailsT>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img class="post-img" src="assets/images/image{{imageUrl}}.jpg" alt="Post image">
+            </div>
+            <div class="col-md-6">
+                <h2>{{title}}</h2>
+                <p>{{body}}</p>
+            </div>
+        </div>
+        <div class="row comments" *ngFor="let comment of commentData">
+            <div class="col-md-2">
+                <img class="comment-img" src="assets/images/profile/profile{{comment.userId}}.jpg" alt="User profile image">
+            </div>
+            <div class="col-md-10">
+                <h3>{{comment.name}}</h3>
+                <p>{{comment.body}}</p>
+            </div>
+        </div>
+    </div>
+</ng-template>

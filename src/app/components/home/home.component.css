@@ -1,0 +1,25 @@
+.post-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+.post-body {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+mat-card-header{
+    justify-content: center;
+    align-items: center;
+}
+mat-card-actions{
+    justify-content: space-between;
+}
+.ngb-pagination-outer{
+    display: flex;
+    justify-content: center;
+}

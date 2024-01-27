@@ -1,0 +1,28 @@
+.dialog-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+.dialog-title h2{
+    margin: 0;
+}
+.post-img {
+    width: 100%;
+}
+.comments{
+    padding: 20px;
+    margin: 10px 0;
+    background-color: grey;
+}
+
+.comment-img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+::ng-deep .mat-mdc-dialog-container{
+    height: auto;
+    
+}
