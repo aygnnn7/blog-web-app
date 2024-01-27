@@ -11,6 +11,39 @@
 
 <ng-container [ngTemplateOutlet]="isUpdate ? updateT : detailsT"></ng-container>
 <ng-template #updateT>
+    <form [formGroup]="form">
+        <div class="container">
+            <div class="row">
+                <mat-form-field>
+                    <mat-label>Blog Title</mat-label>
+                    <input matInput formControlName="title">
+                    <mat-error class="error-message" *ngIf="form.get('title').errors?.['minlength'] 
+                    && (form.get('title').touched 
+                    || form.get('title').dirty)">
+                        • Minimum length is {{form.get('title').errors['minlength'].requiredLength}}.
+                    </mat-error>
+                </mat-form-field>
+                
+            </div>
+            <div class="row">
+                <mat-form-field>
+                    <mat-label>Blog Content</mat-label>
+                    <textarea matInput formControlName="body" cols="40" rows="10"></textarea>
+                    <mat-error class="error-message" *ngIf="form.get('body').errors?.['minlength'] 
+                    && (form.get('body').touched 
+                    || form.get('body').dirty)">
+                        • Minimum length is {{form.get('body').errors['minlength'].requiredLength}}.
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="row submit-btn">
+                <button [disabled]="!form.valid" color="primary" mat-raised-button (click)="onsubmit()">Update</button>
+            </div>
+        </div>
+        
+        
+       
+    </form>
 </ng-template>
 <ng-template #detailsT>
     <div class="container">

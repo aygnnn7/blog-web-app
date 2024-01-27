@@ -8,27 +8,15 @@ export class BaseService {
   constructor(public http: HttpClient) {}
 
   getReq(url: any) {
-    return this.http.get<any>(this.baseUrlUpdate(url), {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json; charset=utf-8',
-      }),
-    });
+    return this.http.get<any>(this.baseUrlUpdate(url));
   }
 
   postReq(url: any, data: any) {
-    return this.http.post<any>(this.baseUrlUpdate(url), data, {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json; charset=utf-8',
-      }),
-    });
+    return this.http.post<any>(this.baseUrlUpdate(url), data);
   }
 
   putReq(url: any, data: any) {
-    return this.http.put<any>(this.baseUrlUpdate(url), data, {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json; charset=utf-8',
-      }),
-    });
+    return this.http.put<any>(this.baseUrlUpdate(url), data);
   }
 
   baseUrlUpdate(url: string): string {

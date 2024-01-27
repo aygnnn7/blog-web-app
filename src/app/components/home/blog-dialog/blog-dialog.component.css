@@ -10,6 +10,7 @@
 .post-img {
     width: 100%;
 }
+
 .comments{
     padding: 20px;
     margin: 10px 0;
@@ -23,6 +24,15 @@
 }
 
 ::ng-deep .mat-mdc-dialog-container{
-    height: auto;
-    
+    height: auto; 
+}
+form {
+    min-width: 300px;
+}
+.submit-btn{
+    justify-content: center;
+    padding: 5px 0;
+}
+.submit-btn button{
+    width: 100px;
 }
